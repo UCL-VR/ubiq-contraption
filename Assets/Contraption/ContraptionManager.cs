@@ -270,6 +270,18 @@ public class ContraptionManager : MonoBehaviour
         return null;
     }
 
+    public IComponent GetComponent(NetworkId id)
+    {
+        foreach (var item in components.Values)
+        {
+            if (item.component.NetworkId == id)
+            {
+                return item.component;
+            }
+        }
+        return null;
+    }
+
     public NetworkId GetNetworkId(Transform transform)
     {
         if (transform && components.ContainsKey(transform))
