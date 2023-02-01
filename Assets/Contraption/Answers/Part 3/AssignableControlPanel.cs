@@ -121,7 +121,7 @@ public class AssignableControlPanel : MonoBehaviour, IGraspable, IComponent
         {
             position = manager.GetLocalPosition(transform),
             rotation = manager.GetLocalRotation(transform),
-            attachedId = manager.GetNetworkId(receiver.transform),
+            attachedId = receiver ? manager.GetNetworkId(receiver.transform) : NetworkId.Null,
             value = value
         });
     }
